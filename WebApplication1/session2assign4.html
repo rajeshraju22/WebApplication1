@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script>
+    function employee(first,last,age)
+    {
+    this.firstName=first;
+    this.lastName=last;
+    this.age=age;
+
+    this.print_func = function()
+    {
+        alert("The employee first name is " + this.firstName + " and last name is " + this.lastName + " age is " + this.age);
+    }
+    }
+    var person_x=new employee("rajesh","raju",23);
+    var person_y=new employee("raghu","rama",28);
+    person_x.print_func();
+    person_y.print_func()
+    </script>
+</body>
+</html>
