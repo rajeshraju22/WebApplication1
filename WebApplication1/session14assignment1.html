@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>angularjs assignments</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <script>
+
+        var myApp = angular.module('myApp', []);
+
+        myApp.controller('mycontroller', function ($scope) {
+
+        });
+
+        myApp.directive("myDirective", function () {
+            return {
+                restrict: 'EA',
+                template: '<div> Enter Name:  <input type="text" ng-model="name"> </div> <br> <div> Entered name is:  {{name}} </div>',
+                transclude: true,
+                scope: false
+            }
+        })
+
+
+    </script>
+
+   
+
+        <div ng-controller="mycontroller">
+
+            <div my-directive>
+
+
+
+            </div>
+
+        </div>
+
+   
+
+
+
+</body>
+</html>
