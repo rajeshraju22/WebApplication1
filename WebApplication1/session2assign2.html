@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>assignments</title>
+    <script>
+function outerFunc(){
+	var a = 3;
+  var innerFunc = function (input){
+
+    var b = 6;
+	var total = a * b;
+     alert('total of a and b is '+total);
+
+  }
+  return innerFunc;
+}
+var closureFunc = outerFunc();
+closureFunc();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
