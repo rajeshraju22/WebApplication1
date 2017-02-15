@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>assignments</title>
+</head>
+<body>
+   
+
+    <script type="text/javascript">
+
+			
+			var person = function(firstName){
+			 this.firstName = firstName; 
+			}
+
+			person.prototype.sayHello = function(){
+			  alert("Hello, I'm " + this.firstName);
+			};
+
+
+			
+			var student = function(firstName,age){
+
+			  person.call(this, firstName);
+
+			 this.age = age;  
+			}
+
+			
+			student.prototype = Object.create(person.prototype);
+
+			
+			student.prototype.sayHello = function(){
+			  alert("Hello, I'm " + this.firstName + ". My age is "
+			              + this.age + ".");
+			};
+
+			
+			var student1 = new student("rajesh ", "24");
+			student1.sayHello();
+
+
+    </script>
+</body>
+</html>
