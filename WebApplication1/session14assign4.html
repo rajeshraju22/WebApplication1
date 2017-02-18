@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>assigments</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <script >
+
+    var myApp = angular.module('myApp', []);
+
+    myApp.controller('myController', function ($scope) {
+
+    });
+
+    myApp.directive('transcludeDir', function () {
+        return {
+            restrict: 'A',
+            transclude: true,
+            template: 'Hello this text is from template property of directive <div ng-transclude> </div>'
+        }
+    })
+
+    </script>
+
+    <center>
+
+        <div ng-controller="myController">
+
+            <div transclude-dir>
+                However, This text is from template div, and isn't got replaced because of transclude
+            </div>
+
+        </div>
+
+    </center>
+
+
+</body>
+</html>
