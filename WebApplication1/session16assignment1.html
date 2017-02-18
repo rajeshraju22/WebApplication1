@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>assignments</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <script type="text/javascript">
+
+    var myApp = angular.module('myApp', []);
+
+    myApp.controller('myController', function ($scope, ValService) {
+        $scope.name = ValService.name;
+    });
+
+    myApp.value('ValService', {
+        name: 'raj 1 , raj2 ,raj3 raj 4'
+    })
+
+    </script>
+
+    <center>
+
+        <div ng-controller="myController">
+
+            This  Value service to get Name <br>
+            Name is  : {{name}}
+
+        </div>
+
+    </center>
+
+
+</body>
+</html>
