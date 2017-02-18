@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>assignmets</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <script>
+
+    var myApp = angular.module('myApp', []);
+
+    myApp.controller("mycontroller", function ($scope) {
+
+    });
+        /*element directive*/
+    myApp.directive("myElementDirective", function () {
+        return {
+            restrict: 'E',
+            template: 'the first alert is from Element directive',
+            link: function ($scope, element, attrs) {
+                alert("welcome, This alert is from element directive");
+            }
+        }
+    });
+        /*Attribute directive*/
+    myApp.directive("myAttributeDirective", function () {
+        return {
+            restrict: 'A',
+            template: 'the Second alert is from Attribute directive',
+            link: function ($scope, element, attrs) {
+                alert("welcome, This alert is from Attribute directive");
+            }
+        }
+    });
+        /*this is classDirective*/
+    myApp.directive("myClassDirective", function () {
+        return {
+            restrict: 'C',
+            template: 'Third alert is from Class directive',
+            link: function ($scope, element, attrs) {
+                alert("Hello, This alert is from Class directive");
+            }
+
+        }
+    });
+
+
+    </script>
+
+    <center>
+
+        <div ng-controller="mycontroller">
+
+            <my-element-directive>
+            </my-element-directive>
+
+            <div my-attribute-directive>
+
+            </div>
+
+            <div class="my-class-directive">
+
+            </div>
+
+        </div>
+
+    </center>
+
+
+
+</body>
+</html>
