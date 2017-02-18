@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>assigmets</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="myApp">
+
+    <script>
+
+    var myApp = angular.module('myApp', []);
+
+    myApp.controller('myController', function ($scope, constantService) {
+        $scope.companyName = constantService.name;
+    });
+
+    myApp.constant('constantService', {
+        name: 'Acadgild'
+    });
+
+    </script>
+
+    <center>
+
+        <div ng-controller="myController">
+
+            This example uses Constant service to get Name <br>
+            Name is  : {{companyName}}
+
+        </div>
+
+    </center>
+
+
+
+</body>
+</html>
