@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>assignments</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="myApp">
+
+    <script>
+
+    var myApp = angular.module('myApp', []);
+
+    myApp.controller('myController', function ($scope) {
+        $scope.name = 'Acadgild';
+        $scope.getName = function () {
+            alert('ther name is ' + $scope.name);
+        }
+    });
+
+    myApp.directive('isolateDir', function () {
+        return {
+            restrict: 'A',
+            transclude: true,
+            scope: {
+                name: '&'
+            },
+            template: 'Click on Button to alert name <br> <br><button ng-click="name()"> click here to Show Name</div>'
+        }
+    })
+
+    </script>
+    <center>
+
+        <div ng-controller="myController">
+
+
+            <div isolate-dir name="getName()">
+
+            </div>
+
+        </div>
+
+    </center>
+
+
+
+</body>
+</html>
