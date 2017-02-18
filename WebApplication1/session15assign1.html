@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>assignment</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="myApp">
+    <script>
+
+    var myApp = angular.module('myApp', []);
+
+    myApp.controller('homeCtrl', function ($scope) {
+        $scope.companyName = "raj";
+    });
+
+    myApp.directive('myDirective', function () {
+        return {
+            restrict: 'EA',
+            template: '<br>my name is from isolated directive scope is : {{companyName }} <br>',
+            scope: {
+                companyName: '@',
+            }
+        }
+    });
+
+
+    </script>
+
+    <center>
+
+        <div ng-controller="homeCtrl">
+
+            Company Name from controller is : {{companyName}}
+
+            <my-directive company-name="Acadgild">
+
+            </my-directive>
+
+        </div>
+
+    </center>
+
+
+</body>
+</html>
